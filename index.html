@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevation Roofing Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Elevation Roofing Solutions</h1>
+  <nav>
+    <ul>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Elevation Roofing Solutions</h1>
+      <p>Your trusted roofing experts in North Carolina.</p>
+      <form id="contactForm" method="POST" action="https://elevation-roofing.onrender.com/send">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services fade-in">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Roof Installation</h3>
+        <p>Professional roofing installation with high-quality materials.</p>
+      </div>
+      <div class="card">
+        <h3>Roof Repair</h3>
+        <p>Fast and reliable repairs to keep your home safe and dry.</p>
+      </div>
+      <div class="card">
+        <h3>Roof Inspection</h3>
+        <p>Comprehensive inspections to detect issues early and save you money.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about fade-in">
+    <h2>About Us</h2>
+    <p>At Elevation Roofing Solutions, we provide expert roofing services across North Carolina. Our team is committed to quality, safety, and customer satisfaction. We specialize in installations, repairs, and inspections for both residential and commercial properties.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Fill out the form above or reach us directly at <strong>(336) 303-2571</strong>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2019 Elevation Roofing Solutions | Greensboro, NC | Phone: (336) 303-2571</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Highlight active nav link & fade-in sections & sticky header
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 60;
+    if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+  });
+
+  // Fade-in sections
+  const fadeSections = document.querySelectorAll('.fade-in');
+  fadeSections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) sec.classList.add('visible');
+  });
+
+  // Sticky header shadow
+  if (window.scrollY > 20) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Smooth scrolling on nav link click
+navLinks.forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+    if(targetSection){
+      window.scrollTo({
+        top: targetSection.offsetTop - 50,
+        behavior: "smooth"
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
