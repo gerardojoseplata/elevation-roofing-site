@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Contact - Elevation Roofing</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Us</title>
 </head>
 <body>
-    <header>
-        <h1>Elevation Roofing</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Contact Us</h2>
-        <p>Email: info@elevationroofing.com</p>
-        <p>Phone: (336) 555-1234</p>
-    </main>
+    <h1>Contact Elevation Roofing</h1>
+    <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Your name" required><br>
+        <input type="email" name="email" placeholder="Your email" required><br>
+        <textarea name="message" placeholder="Your message" required></textarea><br>
+        <button type="submit">Send</button>
+    </form>
 </body>
 </html>
