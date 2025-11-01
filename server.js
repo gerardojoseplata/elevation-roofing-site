@@ -1,32 +1,45 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+require('dotenv').config();
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname)); // serve HTML files
+// Set SendGrid API key
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-app.post('/contact', (req, res) => {
+// Serve static files (your HTML, CSS)
+app.use(express.static(__dirname));
+
+// Parse form data
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Contact form endpoint
+app.post('/contact', async (req, res) => {
     const { name, email, message } = req.body;
 
     const msg = {
-        to: process.env.TO_EMAIL,
-        from: process.env.TO_EMAIL, // can use same email
-        subject: `New Contact from ${name}`,
-        text: `Email: ${email}\nMessage: ${message}`
+        to: process.env.FROM_EMAIL,       // where your emails will go
+        from: process.env.FROM_EMAIL,     // email sender
+        subject: `New message from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        html: `<p><strong>Name:</strong> ${name}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Message:</strong> ${message}</p>`
     };
 
-    sgMail
-        .send(msg)
-        .then(() => res.send('Message sent successfully!'))
-        .catch(err => {
-            console.error(err);
-            res.send('Error sending message.');
-        });
+    try {
+        await sgMail.send(msg);
+        res.status(200).send('Message sent successfully!');
+    } catch (error) {
+        console.error('SendGrid error:', error);
+        res.status(500).send('Error sending message.');
+    }
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
