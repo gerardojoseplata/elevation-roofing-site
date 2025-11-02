@@ -1,22 +1,80 @@
+/* --- Base Styles --- */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  background-color: #F5F5F5;
+  color: #2E2E2E;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1em;
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(to right, #1E40AF, #2563EB);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1em;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
 }
 
-main {
-    padding: 2em;
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.btn-primary {
+  background-color: white;
+  color: #1E40AF;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2563EB;
+  color: white;
+}
+
+/* --- Sections --- */
+section {
+  padding: 60px 20px;
+  background-color: white;
+  margin: 20px 0;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #1E40AF;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #1E40AF;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #E0E7FF;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
 }
