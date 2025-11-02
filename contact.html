@@ -2,9 +2,53 @@
 <html>
 <head>
     <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+        }
+        .contact-info {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Contact Elevation Roofing Solutions</h1>
+
+    <div class="contact-info">
+        <p><strong>Phone:</strong> (336) 303-2571</p>
+        <p><strong>Email:</strong> plata.jose13@gmail.com</p>
+    </div>
+
     <form action="/contact" method="POST">
         <input type="text" name="name" placeholder="Your name" required><br>
         <input type="email" name="email" placeholder="Your email" required><br>
