@@ -55,12 +55,39 @@
         <textarea name="message" placeholder="Your message" required></textarea><br>
         <button type="submit">Send</button>
     </form>
-    <footer id="footer">
-    <div class="footer-content">
-        <p>© Elevation Roofing Solutions</p>
-        <p>Phone: (336)303-2571 | Email: (plata.jose13@gmail.com)</p>
-        <p>Serving our community with quality & integrity.</p>
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-about">
+      <h3>Elevation Roofing Solutions</h3>
+      <p>High-quality roofing built to last. Honest pricing. Reliable service.</p>
     </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📍 Greensboro, NC</p>
+      <p>📞 (336)303-2571</p>
+      <p>✉️ plata.jose13@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Elevation Roofing Solutions — All Rights Reserved.</p>
+  </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
