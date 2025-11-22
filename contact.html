@@ -24,17 +24,21 @@
           <p>Got questions or need a free estimate? Reach out — we’ll get back to you quickly.</p>
 
           <!-- Simple contact form (replace action with your backend endpoint if you have one) -->
-          <form action="#" method="post" style="max-width:600px;margin:0 auto;text-align:left;">
-            <label for="name">Name</label><br>
-            <input id="name" name="name" type="text" required style="width:100%;padding:8px;margin-bottom:10px;">
-            <label for="email">Email</label><br>
-            <input id="email" name="email" type="email" required style="width:100%;padding:8px;margin-bottom:10px;">
-            <label for="phone">Phone</label><br>
-            <input id="phone" name="phone" type="tel" style="width:100%;padding:8px;margin-bottom:10px;">
-            <label for="message">Message</label><br>
-            <textarea id="message" name="message" rows="6" required style="width:100%;padding:8px;margin-bottom:10px;"></textarea>
-            <button type="submit" class="btn-primary" style="display:inline-block;">Send Message</button>
-          </form>
+<form action="/contact" method="POST" style="max-width:600px;margin:0 auto;text-align:left;">
+  <label for="name">Name</label><br>
+  <input id="name" name="name" type="text" required style="width:100%;padding:8px;margin-bottom:10px;">
+
+  <label for="email">Email</label><br>
+  <input id="email" name="email" type="email" required style="width:100%;padding:8px;margin-bottom:10px;">
+
+  <label for="phone">Phone</label><br>
+  <input id="phone" name="phone" type="tel" style="width:100%;padding:8px;margin-bottom:10px;">
+
+  <label for="message">Message</label><br>
+  <textarea id="message" name="message" rows="6" required style="width:100%;padding:8px;margin-bottom:10px;"></textarea>
+
+  <button type="submit" class="btn-primary" style="display:inline-block;">Send Message</button>
+</form>
 
           <div style="margin-top:30px;text-align:center;">
             <p>Or call us: <strong>(336)303-2571</strong></p>
