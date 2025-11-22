@@ -1,93 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            line-height: 1.6;
-        }
-        h1 {
-            text-align: center;
-        }
-        .contact-info {
-            background-color: #f8f8f8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .contact-info p {
-            margin: 5px 0;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Contact - Elevation Roofing Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Contact Elevation Roofing Solutions</h1>
+    <header>
+        <h1>Welcome to Elevation Roofing Solutions</h1>
+        <p>Your trusted roofing solutions in Greensboro, NC and surrounding areas.</p>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <div class="contact-info">
-        <p><strong>Phone:</strong> (336) 303-2571</p>
-        <p><strong>Email:</strong> plata.jose13@gmail.com</p>
-    </div>
+    <!-- CONTACT SECTION -->
+    <main>
+      <section class="contact-section">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>Got questions or need a free estimate? Reach out — we’ll get back to you quickly.</p>
 
-    <form action="/contact" method="POST">
-        <input type="text" name="name" placeholder="Your name" required><br>
-        <input type="email" name="email" placeholder="Your email" required><br>
-        <textarea name="message" placeholder="Your message" required></textarea><br>
-        <button type="submit">Send</button>
-    </form>
-<footer class="site-footer">
-  <div class="footer-container">
+          <!-- Simple contact form (replace action with your backend endpoint if you have one) -->
+          <form action="#" method="post" style="max-width:600px;margin:0 auto;text-align:left;">
+            <label for="name">Name</label><br>
+            <input id="name" name="name" type="text" required style="width:100%;padding:8px;margin-bottom:10px;">
+            <label for="email">Email</label><br>
+            <input id="email" name="email" type="email" required style="width:100%;padding:8px;margin-bottom:10px;">
+            <label for="phone">Phone</label><br>
+            <input id="phone" name="phone" type="tel" style="width:100%;padding:8px;margin-bottom:10px;">
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="6" required style="width:100%;padding:8px;margin-bottom:10px;"></textarea>
+            <button type="submit" class="btn-primary" style="display:inline-block;">Send Message</button>
+          </form>
 
-    <div class="footer-about">
-      <h3>Elevation Roofing Solutions</h3>
-      <p>High-quality roofing built to last. Honest pricing. Reliable service.</p>
-    </div>
+          <div style="margin-top:30px;text-align:center;">
+            <p>Or call us: <strong>(336)303-2571</strong></p>
+            <p>Email: <strong>plata.jose13@gmail.com</strong></p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </div>
+    <!-- EXACT SAME FOOTER AS INDEX.HTML -->
+    <footer class="site-footer">
+      <div class="footer-container">
 
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>📍 Greensboro, NC</p>
-      <p>📞 (336)303-2571</p>
-      <p>✉️ plata.jose13@gmail.com</p>
-    </div>
+        <div class="footer-about">
+          <h3>Elevation Roofing Solutions</h3>
+          <p>High-quality roofing built to last. Honest pricing. Reliable service.</p>
+        </div>
 
-  </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
 
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> Elevation Roofing Solutions — All Rights Reserved.</p>
-  </div>
-</footer>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📍 Greensboro, NC</p>
+          <p>📞 (336)303-2571</p>
+          <p>✉️ plata.jose13@gmail.com</p>
+        </div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Elevation Roofing Solutions — All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
